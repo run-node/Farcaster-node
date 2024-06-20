@@ -11,6 +11,9 @@ fi
 SCRIPT_PATH="$HOME/Farcaster.sh"
 
 function install_node() {
+
+    sudo apt-get update
+    
     # 检查 screen 是否安装
     if ! command -v screen &> /dev/null
     then
