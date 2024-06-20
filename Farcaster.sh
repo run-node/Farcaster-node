@@ -51,7 +51,7 @@ function install_node() {
     
     cd $HOME
     screen -ls | grep Detached | grep hubble | awk -F '[.]' '{print $1}' | xargs -I {} screen -S {} -X quit
-    screen -dmS nubit bash -c 'curl -sSL https://download.thehubble.xyz/bootstrap.sh | bash'
+    screen -dmS hubble bash -c 'curl -sSL https://download.thehubble.xyz/bootstrap.sh | bash'
     # 等待2秒
     sleep 2
     echo "节点已启动，请使用 'screen -r hubble' 查看日志。"
