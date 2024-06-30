@@ -120,6 +120,11 @@ function check_service_status() {
     /root/hubble/hubble.sh logs
 }
 
+function update(){
+    cd $HOME/./hubble.sh down
+    ./hubble.sh upgrade
+}
+
 # 主菜单
 function main_menu() {
     clear
@@ -129,13 +134,15 @@ function main_menu() {
     echo "2. 查看节点日志"
     echo "3. 查询节点配置信息"
     echo "4. 卸载节点"
-    read -p "请输入选项（1-4）: " OPTION
+    echo "5. 更新节点"
+    read -p "请输入选项（1-5）: " OPTION
 
     case $OPTION in
     1) install_node ;;
     2) check_service_status ;;
     3) check ;;
     4) uninstall ;;
+    5) update ;;
     *)
         echo "无效选项。"
         read -p "按任意键返回主菜单..."
