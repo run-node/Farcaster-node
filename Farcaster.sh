@@ -121,8 +121,9 @@ function check_service_status() {
 }
 
 function update(){
-    cd $HOME/./hubble.sh down
+    cd $HOME/hubble && ./hubble.sh down
     ./hubble.sh upgrade
+    
 }
 
 # 主菜单
